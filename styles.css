@@ -1,0 +1,70 @@
+body {
+    background-image: url("images/use/angelo-abear-lOQEDMw2qko-unsplash.jpg");
+    /*Photo by <a href="https://unsplash.com/@angeloabear?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Angelo Abear</a> on <a href="https://unsplash.com/photos/blue-and-white-light-digital-wallpaper-lOQEDMw2qko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
+    background-repeat: no-repeat;
+}
+
+#grid { /* forces boxes to stay a specific width so when we change width of screen, box stays a certain size. */
+    max-height: 100px;
+    max-width: 300px;
+    box-shadow: 2px 2px 20px;
+}
+
+.box { /* targets row height of each row in our grid so rows aren't squished when empty */
+    
+}
+
+
+#box0:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box1:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box2:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box3:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box4:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box5:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box6:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box7:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+#box8:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}

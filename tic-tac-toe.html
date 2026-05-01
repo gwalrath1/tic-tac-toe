@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe GW</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-white p-3">
+
+    <!-- HEADER -->
+    <div id="header" class="container text-center p-3">
+        <div class="row">
+            <div class="col pt-2"></div>
+            <div class="col pt-2">
+        
+            </div>
+            <div class="col pt-2"></div>
+        </div>
+
+        <div class="row pt-2">
+            <div class="col">
+                <h1 class="m-3">Tic-Tac-Toe</h1>
+            </div>
+        </div>
+
+        <div class="row pt-2">
+            <div id="playerOne" class="col display-6 fs-4">Player 1 - X</div>
+            <div class="col display-6 fs-4"></div>
+            <div class="col display-6 fs-4">Player 2 - O</div>
+        </div>
+
+    </div>
+
+    <!-- ALERTS -->
+    
+    <div id="alertStart" class="alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5" role="alert">
+        Player 1 Start!
+    </div>
+    <div id="alertWinner" class="alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5" role="alert">
+        
+    </div>
+    <div id="alertDraw" class="alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5" role="alert">
+        GAME OVER! It's a DRAW!
+    </div>
+
+    <!-- GRID -->
+    
+    <div class="container m-auto p-3 g-5">
+        <div id="grid" class="container-outline-light m-auto p-0 text-info text-center align-middle border border-info rounded">
+            <div class="row fs-1 g-0">
+                <div id="box0" class="box col p-3 border border-info"></div>
+                <div id="box1" class="box col p-3 border border-info"></div>
+                <div id="box2" class="box col p-3 border border-info"></div>
+            </div>
+            <div class="row fs-1 g-0">
+                <div id="box3" class="box col p-3 border border-info"></div>
+                <div id="box4" class="box col p-3 border border-info"></div>
+                <div id="box5" class="box col p-3 border border-info"></div>
+            </div>
+            <div class="row fs-1 g-0">
+                <div id="box6" class="box col p-3 border border-info"></div>
+                <div id="box7" class="box col p-3 border border-info"></div>
+                <div id="box8" class="box col p-3 border border-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="d-grid col-2 gap-3 mx-auto pt-4 "> <!-- buttons take up 3 columns in the grid because we put col-3 -->
+       <button id="startBtn" type="button" class="btn btn-outline-info text-white">START</button>
+       <button id="resetBtn" type="button" class="btn btn-outline-info text-white">RESET</button>
+    </div>
+    
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
+
