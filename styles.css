@@ -4,16 +4,27 @@ body {
     background-repeat: no-repeat;
 }
 
-#grid { /* forces boxes to stay a specific width so when we change width of screen, box stays a certain size. */
-    max-height: 100px;
+#grid {
+    max-height: 300px;   /* match max-width so the grid is square */
     max-width: 300px;
     box-shadow: 2px 2px 20px;
 }
 
-.box { /* targets row height of each row in our grid so rows aren't squished when empty */
-    
+.box {
+    height: 100px;       /* fixed height — cells won't resize when image drops in */
+    overflow: hidden;    /* safety net */
 }
 
+#alert-container { /* even though alerts are invisible on dom, the SPACE it takes up will be there bc we gave it a min-height */
+    min-height: 120px;
+}
+
+/* add this new rule to constrain the images */
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* scales the X/O to fit without stretching */
+}
 
 #box0:hover {
     background-color: #FA2FBD;
