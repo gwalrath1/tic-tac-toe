@@ -5,13 +5,13 @@ body {
 }
 
 #grid {
-    max-height: 300px;   /* match max-width so the grid is square */
-    max-width: 300px;
+    max-height: 450px;   /* match max-width so the grid is square */
+    max-width: 450px;
     box-shadow: 2px 2px 20px;
 }
 
 .box {
-    height: 100px;       /* fixed height — cells won't resize when image drops in */
+    height: 150px;       /* fixed height — cells won't resize when image drops in */
     overflow: hidden;    /* safety net */
 }
 
