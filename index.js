@@ -101,7 +101,7 @@ $(document).ready(function () {
         
        
         console.log("Turn: " + $turn++);
-        let $imgSrc = $currentPlayer === 'X' ? 'images/x_resized.png' : 'images/o_resized.png';
+        let $imgSrc = $currentPlayer === 'X' ? 'images/use/x-neon.png' : 'images/use/o-neon.png';
         // Create the img and append it into the clicked div
         let $img = $('<img>').attr('src', $imgSrc);
         $(this).append($img);
