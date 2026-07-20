@@ -1,9 +1,3 @@
-// // hides alerts before start button is clicked
-// // might have to make it so i use a helper function to create the alerts bc rn they keep flashing RIGHT as the page loads. no bueno.
-// $('#alertStart').hide()
-// $('#alertWinner').hide()
-// $('#alertDraw').hide()
-
 let turn = 1;
 let currentPlayer = 'X';
 let plays = {
@@ -23,9 +17,6 @@ const winningCombinations = [
 ];
 
 $(document).ready(function () {
-
-
-
     const $startBtn = $("#startBtn");
     const $resetBtn = $('#resetBtn');
     $resetBtn.click(function () {
@@ -34,11 +25,32 @@ $(document).ready(function () {
 
     $(".box").css("pointer-events", "none");
 
+    // startBtn pulsates before being clicked
+    fade();
+
     $startBtn.click(function () {
+        $("#startBtn").stop();
+        $("#startBtn").css("opacity", 1);
+        $("#startBtn").removeClass("btn-info");
+        $("#startBtn").addClass("btn-outline-info");
+
+        $("#startBtn").css("pointer-events", "none");
+        $("#startBtn").off();
+
         console.log("Start game");
         $(".box").css("pointer-events", "auto");
+
+        $("#alertStart").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
+        $("#alertStart").append("Player 1 Start!");
+
+
+
         $(".box").on('click', function () {
+            $("#alertStart").hide();
+
+
             if (currentPlayer === 'X') {
+
                 console.log("Turn " + turn);
                 if ($(this).children('img').length > 0) {
                     console.log("image already here");
@@ -50,10 +62,23 @@ $(document).ready(function () {
                     console.log("Boxes for O: " + plays.O);
                     if (isThereAWinner()) {
                         console.log("We have a winner! it is " + currentPlayer)
-                        alert('Winner is: ' + currentPlayer);
+                        //alert('Winner is: ' + currentPlayer);
+                        $("#alertWinner").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
+                        $("#alertWinner").append(`Player ${currentPlayer} wins!`);
+
                         $(".box").css("pointer-events", "none");
                         $(".box").off();
 
+                    } else {
+                        if (turn === 9) {
+                            console.log("draw");
+
+                            $("#alertDraw").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
+                            $("#alertDraw").append("GAME OVER! It's a DRAW!");
+
+                            $(".box").css("pointer-events", "none");
+                            $(".box").off();
+                        }
                     }
 
                     currentPlayer = 'O';
@@ -71,25 +96,44 @@ $(document).ready(function () {
                     console.log("Boxes for O: " + plays.O);
                     if (isThereAWinner()) {
                         console.log("We have a winner! it is " + currentPlayer)
-                        alert('Winner is: ' + currentPlayer);
+                        //alert('Winner is: ' + currentPlayer);
+
+                        $("#alertWinner").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
+                        $("#alertWinner").append(`Player ${currentPlayer} wins!`);
+
                         $(".box").css("pointer-events", "none");
                         $(".box").off();
-  
-                    } 
+
+                    } else {
+                        if (turn === 9) {
+                            alert("no winner");
+                            console.log("draw");
+
+                            $("#alertDraw").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
+                            $("#alertDraw").append("GAME OVER! It's a DRAW!");
+
+                            $(".box").css("pointer-events", "none");
+                            $(".box").off();
+                        }
+                    }
+
+
                     currentPlayer = 'X';
                     turn++;
                 }
             }
 
-            if (turn > 9) {
-                console.log("draw");
-                alert("draw. no winner.");
-                $(".box").css("pointer-events", "none");
-                $(".box").off();
-            }
         });
     });
 });
+
+// startBtn pulsates before being clicked
+function fade() {
+    $("#startBtn").animate({ opacity: 0.5 }, 800, function () {
+        $(this).animate({ opacity: 1 }, 800, fade);
+    });
+}
+
 
 function isThereAWinner() {
     if (turn < 5) {
@@ -101,7 +145,6 @@ function isThereAWinner() {
 
         for (let j = 0; j < winningCombinations[i].length; j++) {
             if ($.inArray(winningCombinations[i][j], plays[currentPlayer]) < 0) {
-                console.log("No winner!");
                 winner = false;
                 break;
             }
