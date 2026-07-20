@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/use/angelo-abear-lOQEDMw2qko-unsplash.jpg");
+    background-image: url("images/angelo-abear-lOQEDMw2qko-unsplash.jpg");
     /*Photo by <a href="https://unsplash.com/@angeloabear?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Angelo Abear</a> on <a href="https://unsplash.com/photos/blue-and-white-light-digital-wallpaper-lOQEDMw2qko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
     background-repeat: no-repeat;
 }
@@ -15,8 +15,17 @@ body {
     overflow: hidden;    /* safety net */
 }
 
+
+.box:hover {
+    background-color: #FA2FBD;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+
+
 #alert-container { /* even though alerts are invisible on dom, the SPACE it takes up will be there bc we gave it a min-height */
-    min-height: 120px;
+    min-height: 70px;
 }
 
 /* add this new rule to constrain the images */
@@ -26,6 +35,19 @@ body {
     object-fit: contain; /* scales the X/O to fit without stretching */
 }
 
+#startBtn {
+    position: relative;
+}
+
+#imageP1 {
+    height: 80px;
+}
+
+#imageP2 {
+    height: 80px;
+}
+
+/*
 #box0:hover {
     background-color: #FA2FBD;
     opacity: 0.6;
@@ -79,3 +101,4 @@ body {
     opacity: 0.6;
     transition: 0.5s;
 }
+    */
