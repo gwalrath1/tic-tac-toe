@@ -16,6 +16,16 @@ const winningCombinations = [
     [2, 4, 6]  // 7
 ];
 
+// AUDIO 
+const audioSwoosh = document.createElement('audio');
+audioSwoosh.setAttribute('src','audio/585257__lesaucisson__swoosh-1.mp3');
+const audioStart = document.createElement('audio');
+audioStart.setAttribute('src', 'audio/519985__abdrtar__recording-start.mp3');
+const audioWin = document.createElement('audio');
+audioWin.setAttribute = ('src', 'audio/615100__mlaudio__magic_game_win_success_2.wav');
+const audioDraw = document.createElement('audio');
+audioDraw.setAttribute = ('src','audio/752668__etheraudio__sqr-beep-echo-818f.mp3');
+
 $(document).ready(function () {
     const $startBtn = $("#startBtn");
     const $resetBtn = $('#resetBtn');
@@ -29,6 +39,7 @@ $(document).ready(function () {
     fade();
 
     $startBtn.click(function () {
+        audioStart.play();
         $("#startBtn").stop();
         $("#startBtn").css("opacity", 1);
         $("#startBtn").removeClass("btn-info");
@@ -47,10 +58,12 @@ $(document).ready(function () {
 
         $(".box").on('click', function () {
             $("#alertStart").hide();
-
+            audioSwoosh.play();
 
             if (currentPlayer === 'X') {
-
+                fadeO();
+                $("#imageP1Div").stop();
+                $("#imageP1Div").css("opacity", 1);
                 console.log("Turn " + turn);
                 if ($(this).children('img').length > 0) {
                     console.log("image already here");
@@ -61,6 +74,7 @@ $(document).ready(function () {
                     console.log("Boxes for X: " + plays.X);
                     console.log("Boxes for O: " + plays.O);
                     if (isThereAWinner()) {
+                        audioStart.play();
                         console.log("We have a winner! it is " + currentPlayer)
                         //alert('Winner is: ' + currentPlayer);
                         $("#alertWinner").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
@@ -69,15 +83,26 @@ $(document).ready(function () {
                         $(".box").css("pointer-events", "none");
                         $(".box").off();
 
+                        $("#imageP1Div").stop();
+                        $("#imageP1Div").css("opacity", 1);
+                        $("#imageP2Div").stop();
+                        $("#imageP2Div").css("opacity", 1);
+
                     } else {
                         if (turn === 9) {
+                            audioStart.play();
                             console.log("draw");
 
                             $("#alertDraw").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
-                            $("#alertDraw").append("GAME OVER! It's a DRAW!");
+                            $("#alertDraw").append("DRAW! No winner!");
 
                             $(".box").css("pointer-events", "none");
                             $(".box").off();
+
+                            $("#imageP1Div").stop();
+                            $("#imageP1Div").css("opacity", 1);
+                            $("#imageP2Div").stop();
+                            $("#imageP2Div").css("opacity", 1);
                         }
                     }
 
@@ -85,6 +110,9 @@ $(document).ready(function () {
                     turn++;
                 }
             } else {
+                fadeX();
+                $("#imageP2Div").stop();
+                $("#imageP2Div").css("opacity", 1);
                 console.log("Turn " + turn);
                 if ($(this).children('img').length > 0) {
                     console.log("image already here");
@@ -95,6 +123,8 @@ $(document).ready(function () {
                     console.log("Boxes for X: " + plays.X);
                     console.log("Boxes for O: " + plays.O);
                     if (isThereAWinner()) {
+                        audioStart.play();
+                        console.log(audioWin);
                         console.log("We have a winner! it is " + currentPlayer)
                         //alert('Winner is: ' + currentPlayer);
 
@@ -104,16 +134,29 @@ $(document).ready(function () {
                         $(".box").css("pointer-events", "none");
                         $(".box").off();
 
+                        $("#imageP1Div").stop();
+                        $("#imageP1Div").css("opacity", 1);
+                        $("#imageP2Div").stop();
+                        $("#imageP2Div").css("opacity", 1);
+
+
                     } else {
                         if (turn === 9) {
+                            audioStart.play();
                             alert("no winner");
                             console.log("draw");
 
                             $("#alertDraw").addClass("alert border border-info bg-dark text-center m-0 ms-5 me-5 fs-5");
-                            $("#alertDraw").append("GAME OVER! It's a DRAW!");
+                            $("#alertDraw").append("DRAW! No winner!");
 
                             $(".box").css("pointer-events", "none");
                             $(".box").off();
+
+                            $("#imageP1Div").stop();
+                            $("#imageP1Div").css("opacity", 1);
+                            $("#imageP2Div").stop();
+                            $("#imageP2Div").css("opacity", 1);
+
                         }
                     }
 
@@ -131,6 +174,18 @@ $(document).ready(function () {
 function fade() {
     $("#startBtn").animate({ opacity: 0.5 }, 800, function () {
         $(this).animate({ opacity: 1 }, 800, fade);
+    });
+}
+
+function fadeX() {
+    $("#imageP1Div").animate({ opacity: 0.3 }, 800, function () {
+        $(this).animate({ opacity: 1 }, 800, fadeX);
+    });
+}
+
+function fadeO() {
+    $("#imageP2Div").animate({ opacity: 0.3 }, 800, function () {
+        $(this).animate({ opacity: 1 }, 800, fadeO);
     });
 }
 
