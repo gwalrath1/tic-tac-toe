@@ -13,6 +13,9 @@ body {
 .box {
     height: 150px;       /* fixed height — cells won't resize when image drops in */
     overflow: hidden;    /* safety net */
+    /* bg color or no?? */
+    background-color:rgb(8, 8, 82);
+    opacity: 1;
 }
 
 
@@ -26,6 +29,7 @@ body {
 
 #alert-container { /* even though alerts are invisible on dom, the SPACE it takes up will be there bc we gave it a min-height */
     min-height: 70px;
+
 }
 
 /* add this new rule to constrain the images */
