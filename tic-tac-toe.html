@@ -13,7 +13,7 @@
 <body class="text-white p-3">
 
     <!-- HEADER -->
-    <div id="header" class="container text-center p-3">
+    <div id="header" class="container-md text-center p-4">
         <div class="row">
             <div class="col pt-2"></div>
             <div class="col pt-2">
@@ -28,24 +28,31 @@
             </div>
         </div>
 
-        <!-- IMAGES FOR PLAYERS -->
-        <div class="row pt-2">
-            <div id="imageP1Div" class="col display-6 fs-4"><img id="imageP1" src="images/x-neon.png" alt="neon blue x"></div>
-            <div class="col display-6 fs-4"></div>
-            <div id="imageP2Div" class="col display-6 fs-4"><img id="imageP2" src="images/o-neon.png" alt="neon pink o"></div>
+        <div id="player-title" class="row pt-2">
+
+            <div id="p1" class="col display-6 fs-4 container-sm">Player 1</div>
+            <div class="col-1 display-6 fs-4"></div>
+            <div id="p2" class="col display-6 fs-4 container-sm">Player 2</div>
+
         </div>
 
+        <!-- IMAGES FOR PLAYERS -->
         <div class="row pt-2">
-            <div id="p1" class="col display-6 fs-4">Player 1</div>
-            <div class="col display-6 fs-4"></div>
-            <div id="p2" class="col display-6 fs-4">Player 2</div>
+
+            <div id="imageP1Div" class="col display-6 fs "><img id="imageP1" src="images/x-neon.png" alt="neon blue x"></div>
+            <div class="col-1 display-6 fs-4"></div>
+            <div id="imageP2Div" class="col display-6 fs-4"><img id="imageP2" src="images/o-neon.png" alt="neon pink o"></div>
+
         </div>
+
+
 
     </div>
 
     <!-- ALERTS -->
 
-    <div id="alert-container" class="container col-md">
+
+    <div id="alert-container" class="col container-sm ">
 
         <div id="alertStart" role="alert"></div>
 
@@ -55,6 +62,9 @@
 
 
     </div>
+
+
+
 
 
 
@@ -82,14 +92,14 @@
     </div>
 
     <!-- BUTTONS -->
-    <div class="d-grid col-2 gap-3 mx-auto pt-4 "> <!-- buttons take up 3 columns in the grid because we put col-3 -->
+    <div class="d-grid col-2 gap-3 mx-auto pt-4 "> <!-- buttons take up 3 columns in the grid because we put col-2 -->
         <button id="startBtn" type="button" class="btn btn-info text-white">START</button>
         <button id="resetBtn" type="button" class="btn btn-outline-info text-white">RESET</button>
     </div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="index_draft_4.js"></script>
+    <script src="index_draft_4_fade.js"></script>
 </body>
 
 </html>
