@@ -4,14 +4,18 @@ body {
     background-repeat: no-repeat;
 }
 
+#header {
+    max-width: 900px;
+}
+
 #grid {
-    max-height: 450px;   /* match max-width so the grid is square */
-    max-width: 450px;
+    max-height: 400px;   /* match max-width so the grid is square */
+    max-width: 400px;
     box-shadow: 2px 2px 20px;
 }
 
 .box {
-    height: 150px;       /* fixed height — cells won't resize when image drops in */
+    height: 133px;       /* fixed height — cells won't resize when image drops in */
     overflow: hidden;    /* safety net */
     /* bg color or no?? */
     background-color:rgb(8, 8, 82);
@@ -26,9 +30,9 @@ body {
 }
 
 
-
 #alert-container { /* even though alerts are invisible on dom, the SPACE it takes up will be there bc we gave it a min-height */
     min-height: 70px;
+    max-width: 675px;
 
 }
 
@@ -45,11 +49,14 @@ body {
 
 #imageP1 {
     height: 80px;
+
 }
 
 #imageP2 {
     height: 80px;
 }
+
+
 
 /*
 #box0:hover {
